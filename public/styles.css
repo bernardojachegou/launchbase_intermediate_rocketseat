@@ -1,0 +1,74 @@
+:root {
+    --primary-color: rgb(234, 233, 235);
+    --hover-color: rgb(128, 107, 243);
+}
+
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+/* Reset e configurações globais; */
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: white;
+}
+
+/* Configurações do body: Cor do plano de fundo; */
+
+body {
+    background-image: url("https://wallpaperaccess.com/full/1087589.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Configurações do header: Cor de fundo, largura, espaçamento interno, alinhamento do texto e borda-inferior; */
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+/* Configuração do menu: Tamanho da fonte; */
+
+header .links {
+    font-size: 22px;
+}
+
+/* Configuração dos elementos dentro do menu: Cor, espaçamento a esquerda, decoração de texto e posicionamento; */
+
+.links a {
+    color: #999;
+    margin-left: 32px;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Configuração dos elementos dentro do menu quando ativos: Cor e peso da fonte; */
+
+.links a.active {
+    font-weight: bold;
+    color: white;
+}
+
+/* Configuração 01 de transição de underline nos itens do menu: Conteúdo, largura, altura, cor de fundo, posição, posição a esquerda e inferior; */
+
+.links a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+}
+
+/* Configuração 02 de transição de underline dos itens do menu: largura e tempo de transição; */
+
+.links a:hover::after {
+    width: 100%;
+    transition: width 300ms ease-in-out;
+}
