@@ -4,14 +4,14 @@
 }
 
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
-/* Reset e configurações globais; */
+/* ======== Reset e Configurações Globais ======== */
 
 * {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     border: 0;
-    color: white;
+    color: black;
 }
 
 /* Configurações do body: Cor do plano de fundo; */
@@ -22,12 +22,14 @@ body {
     background-size: cover;
 }
 
+/* ======== Configuração do Header ======== */
+
 /* Configurações do header: Cor de fundo, largura, espaçamento interno, alinhamento do texto e borda-inferior; */
 
 header {
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
-    padding: 32px;
+    padding: 32px 0px;
     text-align: center;
     border-bottom: 1px solid white;
 }
@@ -71,4 +73,82 @@ header .links {
 .links a:hover::after {
     width: 100%;
     transition: width 300ms ease-in-out;
+}
+
+/* ======== Configuração do Conteúdo/Instructors ======== */
+
+/* Configuração do card: Cor de fundo, largura, altura, espaçamento externo, display e número de colunas; */
+
+.card {
+    background-color: white;
+    width: 800px;
+    min-height: 400px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.6); */
+    animation-name: up;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in;
+}
+
+/* Condifuração de animação do card: Opacidade e direção de deslocamento; */
+
+@keyframes up {
+    from  {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Configurações de informações do card: */
+
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+}
+
+.details .item:last-child {
+    border: none;
+}
+
+.details h3, 
+.details .item div:nth-child(1){
+    font-size: 14px;
+    line-height: 24px;
+    color: #777;
+    letter-spacing: 0.7px;
+    font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+    color: #555;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--hover-color);
+}
+
+.details .item div:nth-child(2) span {
+    padding: 8px 16px;
+    background-color: yellow;
+    border-radius: 16px;
+    color: #777;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
 }
