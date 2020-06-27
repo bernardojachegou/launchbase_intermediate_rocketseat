@@ -18,7 +18,7 @@
 
 body {
     background-image: url("https://wallpaperaccess.com/full/1087589.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
 }
 
@@ -40,10 +40,10 @@ header .links {
     font-size: 22px;
 }
 
-/* Configuração dos elementos dentro do menu: Cor, espaçamento a esquerda, decoração de texto e posicionamento; */
+/* Configuração dos elementos dentro do menu: Cor, espaçamento externo a esquerda, decoração de texto e posicionamento; */
 
 .links a {
-    color: #999;
+    color: #777;
     margin-left: 32px;
     text-decoration: none;
     position: relative;
@@ -53,7 +53,7 @@ header .links {
 
 .links a.active {
     font-weight: bold;
-    color: white;
+    color: yellow;
 }
 
 /* Configuração 01 de transição de underline nos itens do menu: Conteúdo, largura, altura, cor de fundo, posição, posição a esquerda e inferior; */
@@ -62,7 +62,7 @@ header .links {
     content: "";
     width: 0%;
     height: 2px;
-    background-color: white;
+    background-color: var(--hover-color);
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -92,6 +92,12 @@ header .links {
     animation-timing-function: ease-in;
 }
 
+/* Configuração da coleção de imagens do avatar; */
+
+.card .avatar {
+    background: url("http://source.unsplash.com/collection/9374406/500x500") no-repeat"
+}
+
 /* Condifuração de animação do card: Opacidade e direção de deslocamento; */
 
 @keyframes up {
@@ -104,20 +110,26 @@ header .links {
     }
 }
 
-/* Configurações de informações do card: */
+/* Configurações de informações do card .details: Espaçamento interno; */
 
 .details {
     padding: 32px;
 }
+
+/* Configurações de informações das divisões do card: borda-inferior e espaçamento interno; */
 
 .details .item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 16px 0;
 }
 
+/* Configurações de informações das divisões do card para o último elemento: borda-inferior; */
+
 .details .item:last-child {
     border: none;
 }
+
+/* Configurações de informações do título e primeira div elemento item: Tamanho da fonte, altura da fonte, cor, espaçamento entre letras e peso da fonte; */
 
 .details h3, 
 .details .item div:nth-child(1){
@@ -128,17 +140,26 @@ header .links {
     font-weight: normal;
 }
 
+/* Configurações do segundo div do elemento item: Cor, peso da fonte e tamanho da fonte; */
+
 .details .item div:nth-child(2) {
     color: #555;
     font-weight: 700;
     font-size: 18px;
 }
 
+/* Configurações do título na section .details: Transformação de texto, peso da fonte e cor; */
+
 .details h3 {
+    text-align: center;
     text-transform: uppercase;
     font-weight: 700;
     color: var(--hover-color);
+    font-size: 18px;
 }
+
+/* Configurações dos elementos span dentro da div (2): Espaçamento interno, cor de fundo, bordas, cor, espaçamento externo a direta, espaçamento externo 
+superior, display, peso da fonte, transofmração de texto e tamanho da fonte;*/
 
 .details .item div:nth-child(2) span {
     padding: 8px 16px;
