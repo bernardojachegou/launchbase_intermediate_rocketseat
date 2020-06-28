@@ -1,5 +1,4 @@
 :root {
-    --primary-color: rgb(234, 233, 235);
     --hover-color: rgb(128, 107, 243);
 }
 
@@ -88,22 +87,16 @@ header .links {
     grid-template-columns: 1fr 1fr;
     /* box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.6); */
     animation-name: up;
-    animation-duration: 400ms;
-    animation-timing-function: ease-in;
-}
-
-/* Configuração da coleção de imagens do avatar; */
-
-.card .avatar {
-    background: url("http://source.unsplash.com/collection/9374406/500x500") no-repeat"
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
 }
 
 /* Condifuração de animação do card: Opacidade e direção de deslocamento; */
 
 @keyframes up {
-    from  {
+    from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateX(15px);
     }
     to {
         opacity: 1;
@@ -131,8 +124,7 @@ header .links {
 
 /* Configurações de informações do título e primeira div elemento item: Tamanho da fonte, altura da fonte, cor, espaçamento entre letras e peso da fonte; */
 
-.details h3, 
-.details .item div:nth-child(1){
+.details h3, .details .item div:nth-child(1) {
     font-size: 14px;
     line-height: 24px;
     color: #777;
@@ -143,7 +135,7 @@ header .links {
 /* Configurações do segundo div do elemento item: Cor, peso da fonte e tamanho da fonte; */
 
 .details .item div:nth-child(2) {
-    color: #555;
+    color: #777;
     font-weight: 700;
     font-size: 18px;
 }
@@ -165,11 +157,50 @@ superior, display, peso da fonte, transofmração de texto e tamanho da fonte;*/
     padding: 8px 16px;
     background-color: yellow;
     border-radius: 16px;
-    color: #777;
+    color: var(--hover-color);
     margin-right: 4px;
     margin-top: 8px;
     display: inline-block;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 12px;
+}
+
+/* ======== Configuração do form ======== */
+
+input {
+    width: 100%;
+    outline: none;
+    color: #555;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+button[type="submit"],
+a.button {
+    font-weight: 700;
+    font-size: 16px;
+    color:var(--hover-color);
+    padding: 8px 32px;
+    background-color: yellow;
+    border-radius: 4px;
+    margin-top: 16px;
+    width: 100%;
+}
+
+a.button {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
 }

@@ -1,0 +1,22 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
+      "name": "Michel",
+      "birth": 676166400000,
+      "gender": "M",
+      "services": "Cross",
+      "created_at": 1593363865990
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
+      "name": "Michel Bernardo",
+      "birth": 676166400000,
+      "gender": "M",
+      "services": "Weight training",
+      "created_at": 1593374335165
+    }
+  ]
+}
