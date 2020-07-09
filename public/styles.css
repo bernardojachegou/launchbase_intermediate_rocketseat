@@ -89,6 +89,12 @@ header .links {
     animation-name: up;
     animation-duration: 200ms;
     animation-timing-function: ease-in-out;
+    border-radius: 8px;
+}
+
+.card section.avatar {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 /* Condifuração de animação do card: Opacidade e direção de deslocamento; */
@@ -151,7 +157,7 @@ header .links {
 }
 
 /* Configurações dos elementos span dentro da div (2): Espaçamento interno, cor de fundo, bordas, cor, espaçamento externo a direta, espaçamento externo 
-superior, display, peso da fonte, transofmração de texto e tamanho da fonte;*/
+superior, display, peso da fonte, transofmração de texto e tamanho da fonte; */
 
 .details .item div:nth-child(2) span {
     padding: 8px 16px;
@@ -168,6 +174,8 @@ superior, display, peso da fonte, transofmração de texto e tamanho da fonte;*/
 
 /* ======== Configuração do form ======== */
 
+/* Configuração das caixas de texto: Largura, bordas ao escrever, cor, peso e tamanho da fonte; */
+
 input {
     width: 100%;
     outline: none;
@@ -176,15 +184,21 @@ input {
     font-size: 18px;
 }
 
+/* Configuração dos seletores: Largura, espaçamento externo a direita; */
+
 input[type="radio"] {
     width: initial;
     margin-right: 4px;
 }
 
+/* Configuração do texto indificativo dentro da caixa de texto: Peso e tamanho da fonte; */
+
 input::placeholder {
     font-size: 16px;
     font-weight: 300;
 }
+
+/* Configuração do botão (submit): Peso e tamanho da fonte, cor, espaçamento interno, cor de fundo, aredondamento das bordas, espaçamento externo superior e largura; */
 
 button[type="submit"],
 a.button {
@@ -198,9 +212,19 @@ a.button {
     width: 100%;
 }
 
+/* Configuração do botão (padrão): Display, espaçamento da caixa, alinhamento do texto e decoração do texto; */
+
 a.button {
     display: block;
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;
 }     
+
+/* Configuração do botão (deletar): Cor de fundo, cor do texto e transformação do texto; */
+
+#form-delete button[type="submit"] {
+    background-color: var(--hover-color);
+    color: white;
+    text-transform: uppercase;
+}

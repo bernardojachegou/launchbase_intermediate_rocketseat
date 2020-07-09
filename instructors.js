@@ -52,8 +52,6 @@ exports.read = (request, response) => {
 
     if (!foundInstructor) return response.send("Instructor not found!");
 
-
-
     const instructor = {
         ...foundInstructor,
         age: age(foundInstructor.birth),
@@ -64,8 +62,8 @@ exports.read = (request, response) => {
     return response.render("instructors/read", { instructor });
 }
 
-// Update
-exports.update = (request, response) => {
+// Edit
+exports.edit = (request, response) => {
 
     const { id } = request.params;
     const foundInstructor = data.instructors.find(function (instructor) {
@@ -80,8 +78,54 @@ exports.update = (request, response) => {
     }
 
 
-    return response.render("instructors/update", { instructor })
+    return response.render("instructors/edit", { instructor })
 }
 
+// Update
+exports.update = (request, response) => {
+
+    const { id } = request.body;
+
+    let index = 0;
+
+    const foundInstructor = data.instructors.find(function (instructor, foundIndex) {
+        if (id == instructor.id) {
+            index = foundIndex
+            return true;
+        }
+    })
+
+    if (!foundInstructor) return response.send("Instructor not found!");
+
+    const instructor = {
+        ...foundInstructor,
+        ...request.body,
+        birth: Date.parse(request.body.birth),
+    }
+
+    data.instructors[index] = instructor;
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) return response.send("Could not update file!")
+
+        return response.redirect(`/instructors/${id}`);
+    })
+
+}
 
 // Delete
+exports.delete = (request, response) => {
+    const { id } = request.body;
+
+    const filteredInstructors = data.instructors.filter(function (instructor) {
+        return instructor.id != id;
+    })
+
+    data.instructors = filteredInstructors;
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) return console.log("Could not delete the profile!");
+
+        return response.redirect("/instructors");
+    })
+}
