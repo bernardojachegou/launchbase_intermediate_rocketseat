@@ -2,6 +2,14 @@ const fs = require("fs");
 const data = require("./data.json");
 const { age, date } = require("./utils");
 
+
+exports.index = (request, response) => {
+
+
+    return response.render("instructors/index", { instructors: data.instructors});
+}
+
+
 // Lógica do CRUD
 // Create
 exports.create = (request, response) => {
@@ -101,6 +109,7 @@ exports.update = (request, response) => {
         ...foundInstructor,
         ...request.body,
         birth: Date.parse(request.body.birth),
+        id: Number(request.body.id)
     }
 
     data.instructors[index] = instructor;

@@ -97,7 +97,7 @@ header .links {
     border-bottom-left-radius: 8px;
 }
 
-/* Condifuração de animação do card: Opacidade e direção de deslocamento; */
+/* Configuração de animação do card: Opacidade e direção de deslocamento; */
 
 @keyframes up {
     from {
@@ -200,11 +200,10 @@ input::placeholder {
 
 /* Configuração do botão (submit): Peso e tamanho da fonte, cor, espaçamento interno, cor de fundo, aredondamento das bordas, espaçamento externo superior e largura; */
 
-button[type="submit"],
-a.button {
+button[type="submit"], a.button {
     font-weight: 700;
     font-size: 16px;
-    color:var(--hover-color);
+    color: var(--hover-color);
     padding: 8px 32px;
     background-color: yellow;
     border-radius: 4px;
@@ -219,7 +218,7 @@ a.button {
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;
-}     
+}
 
 /* Configuração do botão (deletar): Cor de fundo, cor do texto e transformação do texto; */
 
@@ -227,4 +226,87 @@ a.button {
     background-color: var(--hover-color);
     color: white;
     text-transform: uppercase;
+}
+
+/* ======== Configuração da tabela ======== */
+
+/* Configuração do card: Display, espaçamento interno e espaçamento da caixa; */
+
+.table-container {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* Configuração da tabela: Espaçamento de borda (padrão); */
+
+.table-container table {
+    border-spacing: 0;
+}
+
+/* Configuração dos títulos da tabela: Alinhamento do texto, transformação do texto, cor e tamanho do texto; */
+
+.table-container th {
+    text-align: left;
+    text-transform: uppercase;
+    color: #777;
+    font-size: 16px;
+}
+
+/* Configuração das colunas e linhas da tabela: Espaçamento interno e borda inferior; */
+
+.table-container td, .table-container th {
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+/* Configuração dos elementos de cada linha/coluna: Cor; */
+
+.table-container td {
+    color: #555;
+}
+
+/* Configuração do elemento da última linha: Borda inferior; */
+
+.table-container tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Configuração dos elementos da primeira coluna: display e alinhamento do texto; */
+
+.table-container tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+/* Configuração do elemento filho dos elementos da primeira coluna: Altura, largura, posição, tamanho utilizado, arredondamento das bordas, sombra e bordas; */
+
+.table-container tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid white;
+}
+
+/* Configuração dos últimos elementos da última coluna (botão): cor de fundo, espaçamento interno, decoração, transformação, cor, tamanho e peso da fonte, bordas;  */
+
+.table-container tbody tr td:last-child a {
+    background-color: yellow;
+    padding: 8px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--hover-color);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+/* Configuração dos últimos elementos da última coluna (botão): alinhamento do elemento; */
+
+.table-container thead tr th:last-child, .table-container td:last-child {
+    text-align: center;
 }
