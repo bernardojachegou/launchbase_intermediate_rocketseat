@@ -1,14 +1,17 @@
 const fs = require("fs");
-const data = require("./data.json");
-const { age, date } = require("./utils");
+const data = require("../data.json");
+const { age, date } = require("../utils");
 
 
 exports.index = (request, response) => {
 
 
-    return response.render("instructors/index", { instructors: data.instructors});
+    return response.render("instructors/index", { instructors: data.instructors });
 }
 
+exports.creating = (request, response) => {
+    return response.render("instructors/create");
+}
 
 // Lógica do CRUD
 // Create
@@ -82,7 +85,7 @@ exports.edit = (request, response) => {
 
     const instructor = {
         ...foundInstructor,
-        birth: date(foundInstructor.birth)
+        birth: date(foundInstructor.birth).iso
     }
 
 

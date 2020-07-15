@@ -4,23 +4,24 @@
 
     <div class="card">
 
-        <section class="avatar" style="background: url({{ instructor.avatar_url }})"></section>
+        <section class="avatar" style="background: url({{ member.avatar_url }})"></section>
 
         <section class="details">
-            <form method="POST" action="/instructors?_method=PUT">
+            <form method="POST" action="/members?_method=PUT">
 
                 <h3>Edit Profile</h3>
 
-                {% include 'instructors/fields.njk' %}
+                {% include 'members/fields.njk' %}
 
-                <input type="hidden" name="id" value="{{instructor.id}}">
+                <input type="hidden" name="id" value="{{member.id}}">
                 <button type="submit">Save changes</button>
             </form>
 
-            <form id="form-delete" method="POST" action="/instructors?_method=DELETE">
-                <input type="hidden" name="id" value="{{instructor.id}}">
+            <form id="form-delete" method="POST" action="/members?_method=DELETE">
+                <input type="hidden" name="id" value="{{member.id}}">
                 <button type="submit">Delete</button>
             </form>
+
         </section>
 
     </div>

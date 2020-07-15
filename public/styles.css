@@ -176,7 +176,8 @@ superior, display, peso da fonte, transofmração de texto e tamanho da fonte; *
 
 /* Configuração das caixas de texto: Largura, bordas ao escrever, cor, peso e tamanho da fonte; */
 
-input {
+input,
+select {
     width: 100%;
     outline: none;
     color: #555;
@@ -294,7 +295,8 @@ a.button {
 
 /* Configuração dos últimos elementos da última coluna (botão): cor de fundo, espaçamento interno, decoração, transformação, cor, tamanho e peso da fonte, bordas;  */
 
-.table-container tbody tr td:last-child a {
+.table-container tbody tr td:last-child a,
+.table-container > a {
     background-color: yellow;
     padding: 8px 24px;
     text-decoration: none;
@@ -303,6 +305,15 @@ a.button {
     font-size: 12px;
     font-weight: 700;
     border-radius: 4px;
+}
+
+/* Configuração do botão "New": Cor de fundo, cor das letras, espaçamento externo e display; */
+
+.table-container > a {
+    background-color: var(--hover-color);
+    color: white;
+    margin-bottom: 32px;
+    display: inline-block;
 }
 
 /* Configuração dos últimos elementos da última coluna (botão): alinhamento do elemento; */

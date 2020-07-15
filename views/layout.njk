@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/styles.css">
-        <link rel="icon" href="https://image.flaticon.com/icons/svg/926/926124.svg" type="image/x-icon"/>
+        {# <link rel="icon" href="https://image.flaticon.com/icons/svg/926/926124.svg" type="image/x-icon"/> #}
 
         {% block head %}
             <title>Gym Manager</title>
@@ -16,13 +16,14 @@
     <body>
         <header>
             <div class="links">
-                <a href="/instructors" class="active">Instructors</a>
+                <a href="/instructors">Instructors</a>
                 <a href="/members">Members</a>
             </div>
         </header>
 
         {% block content %}{% endblock %}
 
+        <script src="/scripts.js"></script>
     </body>
 
 </html>
