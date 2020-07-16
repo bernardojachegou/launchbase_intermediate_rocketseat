@@ -4,13 +4,29 @@ const { age, date } = require("../utils");
 
 
 exports.index = (request, response) => {
-
-
     return response.render("instructors/index", { instructors: data.instructors });
 }
 
 exports.creating = (request, response) => {
     return response.render("instructors/create");
+}
+
+exports.edit = (request, response) => {
+
+    const { id } = request.params;
+    const foundInstructor = data.instructors.find(function (instructor) {
+        return instructor.id == id;
+    })
+
+    if (!foundInstructor) return response.send("Instructor not found!");
+
+    const instructor = {
+        ...foundInstructor,
+        birth: date(foundInstructor.birth).iso
+    }
+
+
+    return response.render("instructors/edit", { instructor })
 }
 
 // Lógica do CRUD
@@ -71,25 +87,6 @@ exports.read = (request, response) => {
     }
 
     return response.render("instructors/read", { instructor });
-}
-
-// Edit
-exports.edit = (request, response) => {
-
-    const { id } = request.params;
-    const foundInstructor = data.instructors.find(function (instructor) {
-        return instructor.id == id;
-    })
-
-    if (!foundInstructor) return response.send("Instructor not found!");
-
-    const instructor = {
-        ...foundInstructor,
-        birth: date(foundInstructor.birth).iso
-    }
-
-
-    return response.render("instructors/edit", { instructor })
 }
 
 // Update

@@ -1,0 +1,51 @@
+<div class="item">
+    <div>Avatar:</div>
+    <div>
+        <input type="url" name="avatar_url" placeholder="https://" value="{{ teacher.avatar_url }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Teacher's name:</div>
+    <div>
+        <input type="text" name="name" placeholder="Do not use abbreviations" value="{{ teacher.name }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Birthdate:</div>
+    <div>
+        <input type="date" name="birth" value="{{ teacher.birth }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Education level:</div>
+    <div>
+        <select name="education_level" id="education_level">
+            <option value="Graduated">Graduated Degree</option>
+            <option value="Master">Master Degree</option>
+            <option value="Doctorate">Doctorate Degree</option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Class category:</div>
+    <div>
+        <span><input type="radio" name="class_category" value="Traditional" {% if teacher.class_category == "Traditional" %} checked="Traditional" {% endif %}>Traditional</span>
+        <span><input type="radio" name="class_category" value="Online" {% if teacher.class_category == "Online" %} checked="checked" {% endif %}>Online</span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Educational Area:</div>
+    <div>
+        <select name="educational_area" id="educational_area">
+            <option value="Languages and literature">Languages & Literature</option>
+            <option value="Exact Sciences">Exact Sciences</option>
+            <option value="Natural Sciences">Natural Sciences</option>
+            <option value="Human Sciences">Human Sciences</option>
+        </select>
+    </div>
+</div>
