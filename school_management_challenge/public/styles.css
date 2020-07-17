@@ -26,6 +26,7 @@ header {
     padding: 40px 0;
     text-align: center;
     border-bottom: 1px solid white;
+    box-sizing: border-box;
 }
 
 header .links {
@@ -34,10 +35,13 @@ header .links {
 
 .links a {
     color: white;
-    margin-left: 32px;
     text-decoration: none;
     position: relative;
     font-weight: 300;
+}
+
+.links a+a {
+    margin-left: 32px;
 }
 
 .links a.active {
@@ -168,6 +172,11 @@ button[type="submit"], a.button {
     cursor: pointer;
 }
 
+button:hover, a.button:hover, .table-container tbody tr td:last-child a:hover {
+    transition: 600ms;
+    background-color: #e1d441;
+}
+
 a.button {
     display: block;
     box-sizing: border-box;
@@ -177,7 +186,12 @@ a.button {
 }
 
 button#delete {
-    background-color: rgb(226, 3, 3);
+    background-color: #e14179;
+}
+
+.table-container>a:hover {
+    background-color: #e14179;
+    transition: 600ms;
 }
 
 .table-container {

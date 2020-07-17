@@ -1,15 +1,66 @@
 {
-  "students": [],
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "name": "Robert Garcia",
+      "email": "robert@gmail.com",
+      "birth": 844560000000,
+      "education_level": "11th",
+      "class_category": "Online",
+      "workload": "8"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+      "name": "Anne Marie",
+      "email": "m_anne@gmail.com",
+      "birth": 918518400000,
+      "education_level": "11th",
+      "class_category": "Traditional",
+      "workload": "12"
+    }
+  ],
   "teachers": [
     {
       "id": 2,
-      "avatar_url": "https://images.unsplash.com/photo-1470468969717-61d5d54fd036?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=683&q=80",
-      "name": "Anne",
+      "avatar_url": "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      "name": "Anne Miller",
       "birth": 905299200000,
       "education_level": "Graduated",
-      "class_category": "Traditional",
-      "educational_area": "Exact Sciences",
+      "class_category": "Online",
+      "educational_area": "Languages and literature",
       "created_at": 1594936132947
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1574230951449-2635f5cb3bc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      "name": "John Brow",
+      "birth": 565747200000,
+      "education_level": "Graduated",
+      "class_category": "Traditional",
+      "educational_area": "Human Sciences",
+      "created_at": 1594937832240
+    },
+    {
+      "id": 5,
+      "avatar_url": "https://images.unsplash.com/photo-1558696149-f2cf87eb99c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      "name": "Sam Rolle",
+      "birth": 618537600000,
+      "education_level": "Master",
+      "class_category": "Online",
+      "educational_area": "Exact Sciences",
+      "created_at": 1594938469470
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://images.unsplash.com/photo-1551862581-98892e5503bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Julie House",
+      "birth": 713232000000,
+      "education_level": "Doctorate",
+      "class_category": "Online",
+      "educational_area": "Natural Sciences",
+      "created_at": 1594938505522
     }
   ]
 }
