@@ -65,7 +65,7 @@ header .links {
 }
 
 .card .avatar {
-    background: url("http://source.unsplash.com/collection/8510639/700x700") no-repeat;
+    background-size: cover;
 }
 
 .card {
