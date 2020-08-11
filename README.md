@@ -3,7 +3,7 @@
 </h1>
 
 <h2 align="center">
-    Desafios do bootcamp LaunchBase da Rocketseat - Fase 03
+    Módulos/Desafios do bootcamp LaunchBase da Rocketseat - Fase 03
 </h2>
 
 <p align="center">
@@ -20,7 +20,7 @@
 
 <h2> :rocket: Sobre o repositório </h2>
 
-<p align="justify">Esse repositório foi criado com o objetivo de guardar os desafios e resoluções do bootcamp
+<p align="justify">Esse repositório foi criado com o objetivo de guardar os módulos/desafios do bootcamp
     LaunchBase da Rocketseat.</p>
 
 <h2> Sumário </h2>
