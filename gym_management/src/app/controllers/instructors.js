@@ -1,8 +1,13 @@
-const { age, date } = require("../../lib/utils");
+const Instructor = require('../models/instructor');
+const { age, date } = require('../../lib/utils');
+
 
 module.exports = {
     index(request, response) {
-        return response.render("instructors/index", { instructors: data.instructors });
+
+        Instructor.all(function (instructors) {
+            return response.render("instructors/index", { instructors })
+        })
     },
 
     create(request, response) {
@@ -10,56 +15,64 @@ module.exports = {
     },
 
     edit(request, response) {
-        const { id } = request.params;
-        const foundInstructor = data.instructors.find(function (instructor) {
-            return instructor.id == id;
+        Instructor.find(request.params.id, function (instructor) {
+            if (!instructor) return response.send("Instructor not found!")
+
+            instructor.birth = date(instructor.birth).iso
+
+            return response.render("instructors/edit", { instructor });
+
         })
-
-        if (!foundInstructor) return response.send("Instructor not found!");
-
-        const instructor = {
-            ...foundInstructor,
-            birth: date(foundInstructor.birth).iso
-        }
-
-
-        return response.render("instructors/edit", { instructor })
     },
 
     post(request, response) {
 
         const keys = Object.keys(request.body);
 
-        // Validação de dados;
         for (key of keys) {
             if (request.body[key] == "") {
                 return response.send("Please, fill all the fields!")
             }
         }
 
-        // Desestruturação de objeto;
-        let { avatar_url, name, birth, gender, services } = request.body;
-
-        return
+        Instructor.create(request.body, function (instructor) {
+            return response.redirect(`/instructors/${instructor.id}`)
+        })
     },
 
     get(request, response) {
-        return
+        Instructor.find(request.params.id, function (instructor) {
+            if (!instructor) return response.send("Instructor not found!")
+
+            instructor.age = age(instructor.birth);
+            instructor.services = instructor.services.split(",");
+            instructor.created_at = date(instructor.created_at).format;
+
+            return response.render("instructors/read", { instructor });
+
+        })
     },
 
     put(request, response) {
-        // Validação de dados;
+
+        const keys = Object.keys(request.body);
+
         for (key of keys) {
             if (request.body[key] == "") {
                 return response.send("Please, fill all the fields!")
             }
         }
 
-        return
+        Instructor.update(request.body, function () {
+            return response.redirect(`/instructors/${request.body.id}`)
+        })
     },
 
     delete(request, response) {
-        return
+
+        Instructor.delete(request.body.id, function () {
+            return response.redirect("instructors/");
+        })
     },
 
 };

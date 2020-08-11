@@ -1,8 +1,13 @@
-const { age, date } = require("../../lib/utils");
+const Member = require('../models/member');
+const { age, date } = require('../../lib/utils');
+
 
 module.exports = {
     index(request, response) {
-        return response.render("members/index", { members: data.members });
+
+        Member.all(function (members) {
+            return response.render("members/index", { members })
+        })
     },
 
     create(request, response) {
@@ -10,56 +15,62 @@ module.exports = {
     },
 
     edit(request, response) {
-        const { id } = request.params;
-        const foundMember = data.members.find(function (member) {
-            return member.id == id;
+        Member.find(request.params.id, function (member) {
+            if (!member) return response.send("Member not found!")
+
+            member.birth = date(member.birth).iso
+
+            return response.render("members/edit", { member });
+
         })
-
-        if (!foundMember) return response.send("Member not found!");
-
-        const member = {
-            ...foundMember,
-            birth: date(foundMember.birth).iso
-        }
-
-
-        return response.render("members/edit", { member })
     },
 
     post(request, response) {
 
         const keys = Object.keys(request.body);
 
-        // Validação de dados;
         for (key of keys) {
             if (request.body[key] == "") {
                 return response.send("Please, fill all the fields!")
             }
         }
 
-        // Desestruturação de objeto;
-        let { avatar_url, name, birth, gender, services } = request.body;
-
-        return
+        Member.create(request.body, function (member) {
+            return response.redirect(`/members/${member.id}`)
+        })
     },
 
     get(request, response) {
-        return
+        Member.find(request.params.id, function (member) {
+            if (!member) return response.send("Member not found!")
+
+            member.birth = date(member.birth).birthDay;
+
+            return response.render("members/read", { member });
+
+        })
     },
 
     put(request, response) {
-        // Validação de dados;
+
+        const keys = Object.keys(request.body);
+
         for (key of keys) {
             if (request.body[key] == "") {
                 return response.send("Please, fill all the fields!")
             }
         }
 
-        return
+        Member.update(request.body, function () {
+            return response.redirect(`/members/${request.body.id}`)
+        })
     },
 
     delete(request, response) {
-        return
+
+        Member.delete(request.body.id, function () {
+            return response.redirect("members/");
+        })
     },
 
 };
