@@ -23,16 +23,6 @@
   ],
   "teachers": [
     {
-      "id": 2,
-      "avatar_url": "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-      "name": "Anne Miller",
-      "birth": 905299200000,
-      "education_level": "Graduated",
-      "class_category": "Online",
-      "educational_area": "Languages and literature",
-      "created_at": 1594936132947
-    },
-    {
       "id": 3,
       "avatar_url": "https://images.unsplash.com/photo-1574230951449-2635f5cb3bc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
       "name": "John Brow",
