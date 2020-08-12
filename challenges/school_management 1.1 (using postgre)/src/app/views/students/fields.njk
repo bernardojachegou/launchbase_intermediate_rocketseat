@@ -1,0 +1,62 @@
+<div class="item">
+    <div>Avatar:</div>
+    <div>
+        <input type="url" name="avatar_url" placeholder="https://" value="{{ student.avatar_url }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Student's name:</div>
+    <div>
+        <input type="text" name="name" placeholder="Do not use abbreviations" value="{{ student.name }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Email:</div>
+    <div>
+        <input type="email" name="email" placeholder="name@example.com" value="{{ student.email }} ">
+    </div>
+</div>
+
+<div class="item">
+    <div>Birthdate:</div>
+    <div>
+        <input type="date" name="birth" value="{{ student.birth }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Grade:</div>
+    <div>
+        <select name="grade" id="education_level">
+            <option hidden="hidden" value="">Select your grade</option>
+            <optgroup label="Middle School">
+                <option value="5th" {% if student.grade == "5th" %} selected="5th" {% endif %}>5th</option>
+                <option value="6th" {% if student.grade == "6th" %} selected="6th" {% endif %}>6th</option>
+                <option value="7th" {% if student.grade == "7th" %} selected="7th" {% endif %}>7th</option>
+                <option value="8th" {% if student.grade == "8th" %} selected="8th" {% endif %}>8th</option>
+            </optgroup>
+            <optgroup label="High School">
+                <option value="9th" {% if student.grade == "9th" %} selected="9th" {% endif %}>9th</option>
+                <option value="10th" {% if student.grade == "10th" %} selected="10th" {% endif %}>10th</option>
+                <option value="11th" {% if student.grade == "11th" %} selected="11th" {% endif %}>11th</option>
+            </optgroup>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Class category:</div>
+    <div>
+        <span><input type="radio" name="class_category" value="traditional" {% if student.class_category == "traditional" %} checked="traditional" {% endif %}>Traditional</span>
+        <span><input type="radio" name="class_category" value="online" {% if student.class_category == "online" %} checked="online" {% endif %}>Online</span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Workload (Week):</div>
+    <div>
+        <input type="number" name="workload" placeholder="how many hours do you want to study?" value="{{ student.workload }}">
+    </div>
+</div>

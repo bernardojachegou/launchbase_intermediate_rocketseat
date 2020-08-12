@@ -1,7 +1,6 @@
 const Instructor = require('../models/instructor');
 const { age, date } = require('../../lib/utils');
 
-
 module.exports = {
     index(request, response) {
 
@@ -73,6 +72,6 @@ module.exports = {
         Instructor.delete(request.body.id, function () {
             return response.redirect("instructors/");
         })
-    },
+    }
 
 };

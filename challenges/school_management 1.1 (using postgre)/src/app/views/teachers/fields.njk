@@ -1,0 +1,53 @@
+<div class="item">
+    <div>Avatar:</div>
+    <div>
+        <input type="url" name="avatar_url" placeholder="https://" value="{{ teacher.avatar_url }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Teacher's name:</div>
+    <div>
+        <input type="text" name="name" placeholder="Do not use abbreviations" value="{{ teacher.name }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Birthdate:</div>
+    <div>
+        <input type="date" name="birth" value="{{ teacher.birth }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Education level:</div>
+    <div>
+        <select name="education_level" id="education_level">
+            <option hidden="hidden" value="">Select your degree</option>
+            <option value="graduated" {% if teacher.education_level == "graduated" %} selected="graduated" {% endif %}>Graduated Degree</option>
+            <option value="master" {% if teacher.education_level == "master" %} selected="master" {% endif %}>Master Degree</option>
+            <option value="doctorate" {% if teacher.education_level == "doctorate" %} selected="doctorate" {% endif %}>Doctorate Degree</option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Class category:</div>
+    <div>
+        <span><input type="radio" name="class_category" value="traditional" {% if teacher.class_category == "traditional" %} checked="traditional" {% endif %}>Traditional</span>
+        <span><input type="radio" name="class_category" value="online" {% if teacher.class_category == "online" %} checked="online" {% endif %}>Online</span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Educational Area:</div>
+    <div>
+        <select name="educational_area" id="educational_area">
+            <option hidden="hidden" value="">Select your area</option>
+            <option value="languages and literature" {% if teacher.educational_area == "languages and literature" %} selected="languages and literature" {% endif %}>Languages & Literature</option>
+            <option value="exact sciences" {% if teacher.educational_area == "exact sciences" %} selected="exact sciences" {% endif %}>Exact Sciences</option>
+            <option value="natural sciences" {% if teacher.educational_area == "natural sciences" %} selected="natural sciences" {% endif %}>Natural Sciences</option>
+            <option value="human sciences" {% if teacher.educational_area == "human sciences" %} selected="human sciences" {% endif %}>Human Sciences</option>
+        </select>
+    </div>
+</div>

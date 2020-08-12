@@ -1,0 +1,36 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="card table-container">
+        <a href="/teachers/create">New</a>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Teacher</th>
+                    <th>Educational Area</th>
+                    <th>Category</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{teacher.avatar_url}})"></span>
+                            {{teacher.name}}</td>
+                        <td>
+                            <span id="subjects">{{teacher.educational_area}}</span>
+                        </td>
+                        <td>{{teacher.class_category}}</td>
+                        <td>
+                            <a href="/teachers/{{teacher.id}}">See</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock content %}
