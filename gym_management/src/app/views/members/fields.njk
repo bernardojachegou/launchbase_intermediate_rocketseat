@@ -29,8 +29,8 @@
 <div class="item">
     <div>Gender:</div>
     <div>
-        <span><input type="radio" name="gender" value="M" {% if member.gender == "M" %} checked="checked" {% endif %}>Male</span>
-        <span><input type="radio" name="gender" value="F" {% if member.gender == "F" %} checked="checked" {% endif %}>Female</span>
+        <span><input checked type="radio" name="gender" value="M" {% if member.gender == "M" %} checked="M" {% endif %}>Male</span>
+        <span><input type="radio" name="gender" value="F" {% if member.gender == "F" %} checked="F" {% endif %}>Female</span>
     </div>
 </div>
 

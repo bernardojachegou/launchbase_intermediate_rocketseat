@@ -50,7 +50,7 @@ header .links {
 
 /* Configuração de alinhamento dos itens do menu: espaçamento externo a esquerda; */
 
-.links a + a {
+.links a+a {
     margin-left: 32px;
 }
 
@@ -101,6 +101,10 @@ header .links {
 .card section.avatar {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+}
+
+section .avatar {
+    background-size: cover;   
 }
 
 /* Configuração de animação do card: Opacidade e direção de deslocamento; */
@@ -182,8 +186,7 @@ superior, display, peso da fonte, transofmração de texto e tamanho da fonte; *
 
 /* Configuração das caixas de texto: Largura, bordas ao escrever, cor, peso e tamanho da fonte; */
 
-input,
-select {
+input, select {
     width: 100%;
     outline: none;
     color: #555;
@@ -216,6 +219,8 @@ button[type="submit"], a.button {
     border-radius: 4px;
     margin-top: 16px;
     width: 100%;
+    cursor: pointer;
+    transition: 300ms;
 }
 
 /* Configuração do botão (padrão): Display, espaçamento da caixa, alinhamento do texto e decoração do texto; */
@@ -227,12 +232,22 @@ a.button {
     text-decoration: none;
 }
 
+button[type="submit"]:hover, a.button:hover {
+    background-color: var(--hover-color);
+    color: white;
+}
+
 /* Configuração do botão (deletar): Cor de fundo, cor do texto e transformação do texto; */
 
 #form-delete button[type="submit"] {
     background-color: var(--hover-color);
     color: white;
     text-transform: uppercase;
+}
+
+#form-delete button[type="submit"]:hover {
+    background-color: crimson;
+    color: white;
 }
 
 /* ======== Configuração da tabela ======== */
@@ -301,8 +316,7 @@ a.button {
 
 /* Configuração dos últimos elementos da última coluna (botão): cor de fundo, espaçamento interno, decoração, transformação, cor, tamanho e peso da fonte, bordas;  */
 
-.table-container tbody tr td:last-child a,
-.table-container > a {
+.table-container tbody tr td:last-child a, .table-container>a {
     background-color: yellow;
     padding: 8px 24px;
     text-decoration: none;
@@ -311,15 +325,26 @@ a.button {
     font-size: 12px;
     font-weight: 700;
     border-radius: 4px;
+    transition: 300ms;
+}
+
+.table-container tbody tr td:last-child a:hover {
+    background-color: var(--hover-color);
+    color: white;
 }
 
 /* Configuração do botão "New": Cor de fundo, cor das letras, espaçamento externo e display; */
 
-.table-container > a {
+.table-container>a {
     background-color: var(--hover-color);
     color: white;
     margin-bottom: 32px;
     display: inline-block;
+}
+
+.table-container>a:hover {
+    background-color: yellow;
+    color: var(--hover-color);
 }
 
 /* Configuração dos últimos elementos da última coluna (botão): alinhamento do elemento; */
