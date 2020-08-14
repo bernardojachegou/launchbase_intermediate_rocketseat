@@ -9,7 +9,8 @@
 
             <div class="item">
                 <div>Name:</div>
-                <div>{{ student.name }}
+                <div>
+                    {{ student.name }}
                 </div>
             </div>
 
@@ -17,12 +18,15 @@
                 <div>Age:</div>
                 <div>
                     {{ student.age }}
-                    y.o</div>
+                    y.o
+                </div>
             </div>
 
             <div class="item">
                 <div>Email:</div>
-                <div>{{ student.email }}</div>
+                <div>
+                    {{ student.email }}
+                </div>
             </div>
 
             <div class="item">
@@ -47,7 +51,8 @@
                 <div>Workload (Week):</div>
                 <div>
                     <span>
-                        {{ student.workload }} hours
+                        {{ student.workload }}
+                        hours
                     </span>
                 </div>
             </div>
@@ -56,6 +61,13 @@
                 <div>Birthday:</div>
                 <div>
                     {{ student.birth}}
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Teacher's student:</div>
+                <div>
+                    {{ student.teacher_name }}
                 </div>
             </div>
 

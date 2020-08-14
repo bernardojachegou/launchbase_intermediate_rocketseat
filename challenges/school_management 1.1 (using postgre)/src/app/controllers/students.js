@@ -10,7 +10,10 @@ module.exports = {
     },
 
     create(request, response) {
-        return response.render("students/create");
+
+        Student.teachersSelectOptions(function (options) {
+            return response.render("students/create", { teacherOptions: options });
+        })
     },
 
     edit(request, response) {
@@ -19,7 +22,9 @@ module.exports = {
 
             student.birth = date(student.birth_date).iso
 
-            return response.render("students/edit", { student });
+            Student.teachersSelectOptions(function (options) {
+                return response.render("students/edit", { student, teacherOptions: options });
+            })
 
         })
     },

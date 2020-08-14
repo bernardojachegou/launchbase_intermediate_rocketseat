@@ -2,13 +2,22 @@
 
 {% block content %}
     <div class="card table-container">
-        <a href="/teachers/create">New</a>
+
+        <div class="header">
+            <a class="button" href="/teachers/create">New</a>
+            <form action="/teachers" method="GET">
+                <input type="text" name="filter" placeholder="Name or category" value={{filter}}>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
         <table width="100%">
             <thead>
                 <tr>
                     <th>Teacher</th>
                     <th>Educational Area</th>
                     <th>Category</th>
+                    <th>Students</th>
                     <th>Details</th>
                 </tr>
             </thead>
@@ -22,6 +31,7 @@
                             <span id="subjects">{{teacher.educational_area}}</span>
                         </td>
                         <td>{{teacher.class_category}}</td>
+                        <td>{{teacher.total_students}}</td>
                         <td>
                             <a href="/teachers/{{teacher.id}}">See</a>
                         </td>

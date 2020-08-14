@@ -60,3 +60,16 @@
         <input type="number" name="workload" placeholder="how many hours do you want to study?" value="{{ student.workload }}">
     </div>
 </div>
+
+<div class="item">
+    <div>Teacher</div>
+    <div>
+        <select name="teacher" id="teacher_select">
+            {% for teacher in teacherOptions %}
+                <option value="{{teacher.id}}" {% if student.teacher_id == teacher.id %} selected="selected" {% endif %}>
+                    {{teacher.name}}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+</div>

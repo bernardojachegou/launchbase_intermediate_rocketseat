@@ -138,7 +138,7 @@ header .links {
     font-size: 12px;
 }
 
-input, #education_level, #educational_area {
+input, #education_level, #educational_area, #teacher_select {
     width: 100%;
     outline: none;
     color: white;
@@ -155,7 +155,6 @@ input[type="radio"] {
 
 input::placeholder {
     color: white;
-    padding-left: 4px;
     font-size: 16px;
     font-weight: 300;
 }
@@ -170,10 +169,10 @@ button[type="submit"], a.button {
     width: 100%;
     margin-top: 16px;
     cursor: pointer;
+    transition: 400ms;
 }
 
 button:hover, a.button:hover, .table-container tbody tr td:last-child a:hover {
-    transition: 600ms;
     background-color: #e1d441;
 }
 
@@ -186,12 +185,16 @@ a.button {
 }
 
 button#delete {
+    background-color: var(--details-color);
+}
+
+button#delete:hover {
     background-color: #e14179;
 }
 
 .table-container>a:hover {
     background-color: #e14179;
-    transition: 600ms;
+    transition: 400ms;
 }
 
 .table-container {
@@ -250,6 +253,7 @@ button#delete {
     font-size: 12px;
     font-weight: 700;
     border-radius: 4px;
+    transition: 400ms;
 }
 
 .table-container thead tr th:last-child, .table-container td:last-child {
@@ -260,4 +264,39 @@ button#delete {
     margin-bottom: 8px;
     display: inline-block;
     margin-left: 8px;
+}
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header a {
+    width: 120px;
+    margin: 0;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 8px;
+}
+
+.table-container .header form button {
+    background-color: #e1d441;
+    margin: 0;
+    transition: 400ms;
+}
+
+.table-container .header form button:hover {
+    background-color: var(--details-color);
+}
+
+.table-container .header form input {
+    border: 1px solid #eee;
+    padding: 6px 8px;
+    box-sizing: border-box;
 }
