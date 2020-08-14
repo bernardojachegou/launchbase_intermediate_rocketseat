@@ -25,7 +25,7 @@ module.exports = {
             member.birth = date(member.birth).iso
 
             Member.instructorsSelectOptions(function (options) {
-                return response.render("members/create", { member, instructorOptions: options });
+                return response.render("members/edit", { member, instructorOptions: options });
             })
 
         })
