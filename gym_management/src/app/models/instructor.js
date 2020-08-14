@@ -3,7 +3,11 @@ const { date } = require('../../lib/utils');
 
 module.exports = {
     all(callback) {
-        db.query(`SELECT * FROM instructors ORDER BY name ASC`, function (err, results) {
+        db.query(`SELECT instructors.*, count(members) AS total_clients 
+            FROM instructors
+            LEFT JOIN members ON (members.instructor_id = instructors.id)
+            GROUP BY instructors.id
+            ORDER BY total_clients DESC;`, function (err, results) {
             if (err) throw `Database error: ${err}`
 
             callback(results.rows);
@@ -11,7 +15,7 @@ module.exports = {
     },
 
     create(data, callback) {
-        
+
         const query = `
             INSERT INTO instructors (
                 avatar_url,
@@ -48,6 +52,20 @@ module.exports = {
                 WHERE id = $1`, [id], function (err, results) {
             if (err) throw `Database error: ${err}`
             callback(results.rows[0]);
+        })
+    },
+
+    findBy(filter, callback) {
+        db.query(`SELECT instructors.*, count(members) AS total_clients 
+            FROM instructors
+            LEFT JOIN members ON (members.instructor_id = instructors.id)
+            WHERE instructors.name ILIKE '%${filter}%'
+            OR instructors.services ILIKE '%${filter}%'
+            GROUP BY instructors.id
+            ORDER BY total_clients DESC;`, function (err, results) {
+            if (err) throw `Database error: ${err}`
+
+            callback(results.rows);
         })
     },
 

@@ -2,12 +2,21 @@
 
 {% block content %}
     <div class="card table-container">
-        <a href="/instructors/create">New</a>
+
+        <div class="header">
+            <a class="button" href="/instructors/create">New</a>
+            <form action="/instructors" method="GET">
+                <input type="text" name="filter" placeholder="Name or category" value={{filter}}>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
         <table width="100%">
             <thead>
                 <tr>
                     <th>Instructor</th>
                     <th>Category</th>
+                    <th>Clients</th>
                     <th>Details</th>
                 </tr>
             </thead>
@@ -18,6 +27,7 @@
                             <span style="background-image: url({{instructor.avatar_url}})"></span>
                             {{instructor.name}}</td>
                         <td>{{instructor.services}}</td>
+                        <td>{{instructor.total_clients}}</td>
                         <td>
                             <a href="/instructors/{{instructor.id}}">See</a>
                         </td>

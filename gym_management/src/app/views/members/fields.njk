@@ -29,7 +29,7 @@
 <div class="item">
     <div>Gender:</div>
     <div>
-        <span><input checked type="radio" name="gender" value="M" {% if member.gender == "M" %} checked="M" {% endif %}>Male</span>
+        <span><input checked="M" type="radio" name="gender" value="M" {% if member.gender == "M" %} {% endif %}>Male</span>
         <span><input type="radio" name="gender" value="F" {% if member.gender == "F" %} checked="F" {% endif %}>Female</span>
     </div>
 </div>
@@ -61,5 +61,18 @@
     <div>Height (feet):</div>
     <div>
         <input type="text" name="height" value="{{ member.height }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Instructor</div>
+    <div>
+        <select name="instructor">
+            {% for instructor in instructorOptions %}
+                <option value="{{instructor.id}}" {% if member.instructor_id == instructor.id %} selected="selected" {% endif %}>
+                    {{instructor.name}}
+                </option>
+            {% endfor %}
+        </select>
     </div>
 </div>

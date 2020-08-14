@@ -3,10 +3,17 @@ const { age, date } = require('../../lib/utils');
 
 module.exports = {
     index(request, response) {
+        const { filter } = request.query;
 
-        Instructor.all(function (instructors) {
-            return response.render("instructors/index", { instructors })
-        })
+        if (filter) {
+            Instructor.findBy(filter, function (instructors) {
+                return response.render("instructors/index", { instructors, filter })
+            })
+        } else {
+            Instructor.all(function (instructors) {
+                return response.render("instructors/index", { instructors })
+            })
+        }
     },
 
     create(request, response) {

@@ -103,8 +103,9 @@ header .links {
     border-bottom-left-radius: 8px;
 }
 
-section .avatar {
-    background-size: cover;   
+.card .avatar {
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Configuração de animação do card: Opacidade e direção de deslocamento; */
@@ -351,4 +352,42 @@ button[type="submit"]:hover, a.button:hover {
 
 .table-container thead tr th:last-child, .table-container td:last-child {
     text-align: center;
+}
+
+/* Configurações da barra de pesquisa:  */
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header a {
+    width: 120px;
+    margin: 0;
+    background-color: var(--hover-color);
+    color: white;
+}
+
+.table-container .header a:hover {
+    background-color: yellow;
+    color: var(--hover-color);
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 8px;
+}
+
+.table-container .header form button {
+    margin: 0;
+}
+
+.table-container .header form input {
+    border: 1px solid #eee;
+    padding: 6px 8px;
+    box-sizing: border-box;
 }
