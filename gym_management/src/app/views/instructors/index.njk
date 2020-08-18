@@ -6,7 +6,7 @@
         <div class="header">
             <a class="button" href="/instructors/create">New</a>
             <form action="/instructors" method="GET">
-                <input type="text" name="filter" placeholder="Name or category" value={{filter}}>
+                <input type="text" name="filter" placeholder="Name or category" value={{filter} }="}">
                 <button type="submit">Search</button>
             </form>
         </div>
@@ -37,6 +37,12 @@
 
             </tbody>
         </table>
+
+        <div class="pagination">
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+        </div>
+
     </div>
 
 {% endblock content %}
