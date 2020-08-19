@@ -17,7 +17,7 @@
                 <button type="submit">Save changes</button>
             </form>
 
-            <form id="form-delete" method="POST" action="/members?_method=DELETE">
+            <form id="form-delete" onclick="handleDeleteConfirmation()" method="POST" action="/members?_method=DELETE">
                 <input type="hidden" name="id" value="{{member.id}}">
                 <button type="submit">Delete</button>
             </form>
@@ -25,7 +25,5 @@
         </section>
 
     </div>
-
-    <script src="../../../../public/scripts.js"></script>
 
 {% endblock content %}

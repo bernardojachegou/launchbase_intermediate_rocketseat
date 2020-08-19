@@ -3,7 +3,29 @@ const { age, date } = require('../../lib/utils');
 
 module.exports = {
     index(request, response) {
+        let { filter, page, limit } = request.query
 
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(instructors) {
+
+                const pagination = {
+                    total: Math.ceil(instructors[0].total / limit),
+                    page
+                }
+
+                return response.render("instructors/index", { instructors, pagination, filter })
+            }
+        }
+
+        Instructor.paginate(params)
 
     },
 

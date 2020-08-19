@@ -17,7 +17,7 @@
                 <button type="submit">Save changes</button>
             </form>
 
-            <form id="form-delete" method="POST" action="/instructors?_method=DELETE">
+            <form id="form-delete" onclick="handleDeleteConfirmation()" method="POST" action="/instructors?_method=DELETE">
                 <input type="hidden" name="id" value="{{instructor.id}}">
                 <button type="submit">Delete</button>
             </form>
