@@ -256,7 +256,6 @@ button[type="submit"]:hover, a.button:hover {
 /* Configuração do card: Display, espaçamento interno e espaçamento da caixa; */
 
 .table-container {
-    display: block;
     padding: 40px;
     box-sizing: border-box;
 }
@@ -390,4 +389,32 @@ button[type="submit"]:hover, a.button:hover {
     border: 1px solid #eee;
     padding: 6px 8px;
     box-sizing: border-box;
+}
+
+.table-container {
+    display: grid;
+    grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+    color: var(--hover-color);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.3);
+    border-bottom: 1px solid var(--hover-color);
 }
