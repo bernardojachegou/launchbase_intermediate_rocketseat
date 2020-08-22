@@ -44,7 +44,7 @@
     <div>
         <select name="educational_area" id="educational_area">
             <option hidden="hidden" value="">Select your area</option>
-            <option value="languages and literature" {% if teacher.educational_area == "languages and literature" %} selected="languages and literature" {% endif %}>Languages & Literature</option>
+            <option value="languages" {% if teacher.educational_area == "languages" %} selected="languages" {% endif %}>Languages</option>
             <option value="exact sciences" {% if teacher.educational_area == "exact sciences" %} selected="exact sciences" {% endif %}>Exact Sciences</option>
             <option value="natural sciences" {% if teacher.educational_area == "natural sciences" %} selected="natural sciences" {% endif %}>Natural Sciences</option>
             <option value="human sciences" {% if teacher.educational_area == "human sciences" %} selected="human sciences" {% endif %}>Human Sciences</option>

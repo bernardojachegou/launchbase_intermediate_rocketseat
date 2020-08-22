@@ -3,7 +3,7 @@
 {% block content %}
     <div class="card">
 
-        <section class="avatar" style="background: url({{ student.avatar_url }})"></section>
+        <section class="avatar" style="background-image: url({{ student.avatar_url }})"></section>
 
         <section class="details">
             <form method="POST" action="/students?_method=PUT">
