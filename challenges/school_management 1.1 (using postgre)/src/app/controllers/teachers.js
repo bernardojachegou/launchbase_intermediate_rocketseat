@@ -4,17 +4,30 @@ const { age, date } = require("../../lib/utils");
 module.exports = {
     index(request, response) {
 
-        const { filter } = request.query;
+        let { filter, page, limit } = request.query
 
-        if (filter) {
-            Teacher.findBy(filter, function (teachers) {
-                return response.render("teachers/index", { teachers })
-            })
-        } else {
-            Teacher.all(function (teachers) {
-                return response.render("teachers/index", { teachers })
-            })
+        page = page || 1
+        limit = limit || 4
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(teachers) {
+
+                const pagination = {
+                    total: Math.ceil(teachers[0].total / limit),
+                    page
+                }
+
+                return response.render("teachers/index", { teachers, pagination, filter })
+            }
         }
+
+        Teacher.paginate(params)
+
     },
 
     create(request, response) {

@@ -1,6 +1,7 @@
 {% extends "layout.njk" %}
 
 {% block content %}
+
     <div class="card table-container">
 
         <div class="header">
@@ -40,6 +41,12 @@
 
             </tbody>
         </table>
+
+        <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+        ></div>
 
     </div>
 
