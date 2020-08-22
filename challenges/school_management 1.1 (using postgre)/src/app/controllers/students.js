@@ -3,10 +3,30 @@ const { age, date } = require("../../lib/utils");
 
 module.exports = {
     index(request, response) {
+        let { filter, page, limit } = request.query
 
-        Student.all(function (students) {
-            return response.render("students/index", { students })
-        })
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(students) {
+
+                const pagination = {
+                    total: Math.ceil(students[0].total / limit),
+                    page
+                }
+
+                return response.render("students/index", { students, pagination, filter })
+            }
+        }
+
+        Student.paginate(params)
+
     },
 
     create(request, response) {

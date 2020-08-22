@@ -17,7 +17,7 @@
 
             </form>
 
-            <form id="form-delete" method="POST" action="/teachers?_method=DELETE">
+            <form id="form-delete" method="POST" onclick="handleDeleteConfirmation()" action="/teachers?_method=DELETE">
                 <input type="hidden" name="id" value="{{teacher.id}}">
                 <button id="delete" type="submit">Delete</button>
             </form>

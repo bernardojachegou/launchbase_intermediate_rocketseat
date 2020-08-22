@@ -1,7 +1,7 @@
+// Script utilizado para deixar o item do meu Instructors/Members como selecionado;
+
 const currentPage = location.pathname;
 const menuItens = document.querySelectorAll("header .links a");
-const formDelete = document.querySelector("#form-delete");
-
 
 for (item of menuItens) {
     if (currentPage.includes(item.getAttribute("href"))) {
@@ -9,9 +9,73 @@ for (item of menuItens) {
     }
 }
 
-formDelete.addEventListener("submit", function () {
+// Função utilizada para solicitar confirmação no delete form;
+
+function handleDeleteConfirmation() {
     const confirmation = confirm("Do you want to delete?")
     if (!confirmation) {
         event.preventDefault()
     }
-})
+}
+
+// Funções que criam a paginação no frontend;
+
+function paginate(selectedPage, totalPages) {
+
+    let pages = [],
+        oldPage
+
+    for (let currentPage = 1; currentPage <= totalPages; currentPage++) {
+
+        const firstAndLastPage = currentPage == 1 || currentPage == totalPages
+        const pagesBeforeSelectedPage = currentPage >= selectedPage - 2
+        const pagesAfterSelectedPage = currentPage <= selectedPage + 2
+
+        if (firstAndLastPage || pagesBeforeSelectedPage && pagesAfterSelectedPage) {
+
+            if (oldPage && currentPage - oldPage > 2) {
+                pages.push('...')
+            }
+
+            if (oldPage && currentPage - oldPage == 2) {
+                pages.push(oldPage + 1)
+            }
+
+            pages.push(currentPage)
+
+            oldPage = currentPage
+        }
+    }
+
+    return pages
+
+}
+
+function createPagination(pagination) {
+    const filter = pagination.dataset.filter
+    const page = +pagination.dataset.page;
+    const total = +pagination.dataset.total;
+    const pages = paginate(page, total);
+
+    let elements = ""
+
+    for (let page of pages) {
+        if (String(page).includes("...")) {
+            elements += `<span>${page}</span>`
+        } else {
+            if (filter) {
+                elements += `<a href="?page=${page}&filter=${filter}">${page}</a>`
+            } else {
+                elements += `<a href="?page=${page}">${page}</a>`
+            }
+        }
+    }
+
+    pagination.innerHTML = elements
+}
+
+const pagination = document.querySelector(".pagination")
+
+if (pagination) {
+    createPagination(pagination)
+};

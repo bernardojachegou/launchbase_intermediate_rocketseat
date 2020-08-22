@@ -1,8 +1,17 @@
 {% extends "layout.njk" %}
 
 {% block content %}
+
     <div class="card table-container">
-        <a href="/students/create">New</a>
+
+        <div class="header">
+            <a class="button" href="/students/create">New</a>
+            <form action="/students" method="GET">
+                <input type="text" name="filter" placeholder="Name or grade" value={{filter}}>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
         <table width="100%">
             <thead>
                 <tr>
@@ -31,6 +40,12 @@
 
             </tbody>
         </table>
+
+        <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+        ></div>
 
     </div>
 
