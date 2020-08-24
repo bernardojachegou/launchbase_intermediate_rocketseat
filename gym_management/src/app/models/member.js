@@ -102,6 +102,7 @@ module.exports = {
             return callback();
         })
     },
+
     instructorsSelectOptions(callback) {
         db.query(`SELECT name, id FROM instructors`, function (err, results) {
             if (err) throw `Database error: ${err}`
@@ -109,6 +110,7 @@ module.exports = {
             callback(results.rows);
         })
     },
+
     paginate(params) {
         const { filter, limit, offset, callback } = params
 
@@ -118,7 +120,6 @@ module.exports = {
                 SELECT count(*) FROM members
                 ) AS total
             `
-
 
         if (filter) {
 

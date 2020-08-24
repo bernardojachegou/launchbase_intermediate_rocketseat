@@ -18,6 +18,8 @@ function handleDeleteConfirmation() {
     }
 }
 
+// Funções que criam a paginação no frontend;
+
 function paginate(selectedPage, totalPages) {
 
     let pages = [],
