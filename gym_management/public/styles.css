@@ -1,6 +1,10 @@
+/* ======== Variáveis para padronização das cores ======== */
+
 :root {
     --hover-color: #806BF3;
 }
+
+/* ======== Configuração de fonte ======== */
 
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
 /* ======== Reset e Configurações Globais ======== */
@@ -353,7 +357,9 @@ button[type="submit"]:hover, a.button:hover {
     text-align: center;
 }
 
-/* Configurações da barra de pesquisa:  */
+/* ======== Configuração da barra de pesquisa ======== */
+
+/* Configurações da barra de pesquisa: Disponibilidade na tela, número de colunas, alinhamento dos elementos, espaçamento externo inferior; */
 
 .table-container .header {
     display: grid;
@@ -361,6 +367,8 @@ button[type="submit"]:hover, a.button:hover {
     align-items: center;
     margin-bottom: 32px;
 }
+
+/* Configurações dos botões: Largura, espaçamento externo, cor de fundo e cor do texto; */
 
 .table-container .header a {
     width: 120px;
@@ -374,6 +382,8 @@ button[type="submit"]:hover, a.button:hover {
     color: var(--hover-color);
 }
 
+/* Configurações do formulário de pesquisa : Disponibilidade na tela, número de colunas, alinhamento dos elementos e espaçamento externo dos elementos; */
+
 .table-container .header form {
     display: grid;
     grid-template-columns: 1fr 120px;
@@ -381,9 +391,13 @@ button[type="submit"]:hover, a.button:hover {
     grid-gap: 8px;
 }
 
+/* Configurações do botão de pesquisa: espaçamento externo; */
+
 .table-container .header form button {
     margin: 0;
 }
+
+/* Configurações do campo de envio: bordas, espaçamento interno e comportamento; */
 
 .table-container .header form input {
     border: 1px solid #eee;
@@ -391,15 +405,21 @@ button[type="submit"]:hover, a.button:hover {
     box-sizing: border-box;
 }
 
+/* Configurações da tabela: Disponibilidade na tela; */
+
 .table-container {
     display: grid;
     grid-template: 64px 1fr 16px / 1fr;
 }
 
+/* Configurações dos elementos superiores da tabela: Espaçamento externo e posicionamento; */
+
 .table-container .header {
     margin: 0;
     align-self: start;
 }
+
+/* Configurações do container de paginação: Espaçamento externo, posicionamento inicial e centralização dos elementos; */
 
 .table-container .pagination {
     margin: 0;
@@ -407,8 +427,9 @@ button[type="submit"]:hover, a.button:hover {
     justify-self: center;
 }
 
-.pagination a,
-.pagination span {
+/* Configurações dos elementos de paginação: Cor,  decoração dos elementos e espaçamento externo a direita; */
+
+.pagination a, .pagination span {
     color: var(--hover-color);
     text-decoration: none;
     margin-right: 16px;
